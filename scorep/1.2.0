@@ -1,0 +1,39 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stdout "\t loads scorep 1.2.0 \n"
+}
+
+module-whatis   "loads scorep 1.2.0"
+
+module load cube
+
+prepend-path    PATH                    /opt/scorep/1.2.0/bin
+
+prepend-path    LD_LIBRARY_PATH         /opt/scorep/1.2.0/lib
+prepend-path    INCLUDE                 /opt/scorep/1.2.0/include 
+prepend-path    CPATH                   /opt/scorep/1.2.0/include 
+prepend-path    LIBRARY_PATH            /opt/scorep/1.2.0/lib
+
+setenv          SCOREP_TOTAL_MEMORY     1073741824                                                                                                                                      
+setenv          SCOREP_ENABLE_PROFILING false
+setenv          SCOREP_ENABLE_TRACING   true
+
+if [ module-info mode load ] {
+ system echo "scorep 1.2.0 loaded"
+}
+
+if [ module-info mode switch2 ] {
+ system echo "scorep 1.2.0 loaded"
+}
+
+if [ module-info mode remove ] {
+ system echo "scorep 1.2 unloaded"
+}
+

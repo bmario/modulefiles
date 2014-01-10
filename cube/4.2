@@ -1,0 +1,38 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stdout "\t loads cube 4.2 \n"
+}
+
+module-whatis   "loads cube 4.2"
+
+# for Tcl script use only
+set     version         3.2.9
+set     modroot         /usr/local/Modules/default
+
+
+prepend-path    PATH                    /opt/cube/4.2/bin
+
+prepend-path    LD_LIBRARY_PATH         /opt/cube/4.2/lib
+prepend-path    INCLUDE                 /opt/cube/4.2/include 
+prepend-path    CPATH                   /opt/cube/4.2/include 
+prepend-path    LIBRARY_PATH            /opt/cube/4.2/lib
+
+if [ module-info mode load ] {
+ system echo "cube 4.2 loaded"
+}
+
+if [ module-info mode switch2 ] {
+ system echo "cube 4.2 loaded"
+}
+
+if [ module-info mode remove ] {
+ system echo "cube 4.2 unloaded"
+}
+

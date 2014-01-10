@@ -1,0 +1,38 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stdout "\t loads libni r2487 \n"
+}
+
+module-whatis   "loads libni r2487"
+
+# for Tcl script use only
+set     version         3.2.9
+set     modroot         /usr/local/Modules/default
+
+
+prepend-path    LD_LIBRARY_PATH         /opt/libni/r2487/lib
+prepend-path    INCLUDE                 /opt/libni/r2487/include
+prepend-path    CPATH                   /opt/libni/r2487/include
+prepend-path    LIBRARY_PATH            /opt/libni/r2487/lib
+
+setenv 		libni_DIR		/opt/libni/r2487
+
+if [ module-info mode load ] {
+ system echo "libni r2487 loaded"
+}
+
+if [ module-info mode switch2 ] {
+ system echo "libni r2487 loaded"
+}
+
+if [ module-info mode remove ] {
+ system echo "libni r2487 unloaded"
+}
+

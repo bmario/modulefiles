@@ -1,0 +1,38 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stdout "\t loads papi 5.2.0 \n"
+}
+
+module-whatis   "loads papi 5.2.0"
+
+# for Tcl script use only
+set     version         3.2.9
+set     modroot         /usr/local/Modules/default
+
+
+prepend-path    PATH                    /opt/papi/5.2.0/bin
+
+prepend-path    LD_LIBRARY_PATH         /opt/papi/5.2.0/lib
+prepend-path    INCLUDE                 /opt/papi/5.2.0/include 
+prepend-path    CPATH                   /opt/papi/5.2.0/include 
+prepend-path    LIBRARY_PATH            /opt/papi/5.2.0/lib
+
+if [ module-info mode load ] {
+ system echo "papi 5.2.0 loaded"
+}
+
+if [ module-info mode switch2 ] {
+ system echo "papi 5.2.0 loaded"
+}
+
+if [ module-info mode remove ] {
+ system echo "papi 5.2.0 unloaded"
+}
+

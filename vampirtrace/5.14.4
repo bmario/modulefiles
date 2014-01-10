@@ -1,0 +1,33 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stdout "\t loads vampirtrace 5.14.4 \n"
+}
+
+module-whatis   "loads vampirtrace 5.14.4"
+
+prepend-path    PATH                    /opt/vampirtrace/5.14.4/bin
+
+prepend-path    LD_LIBRARY_PATH         /opt/vampirtrace/5.14.4/lib
+prepend-path    INCLUDE                 /opt/vampirtrace/5.14.4/include 
+prepend-path    CPATH                   /opt/vampirtrace/5.14.4/include 
+prepend-path    LIBRARY_PATH            /opt/vampirtrace/5.14.4/lib
+
+if [ module-info mode load ] {
+ system echo "vampirtrace 5.14.4 loaded"
+}
+
+if [ module-info mode switch2 ] {
+ system echo "vampirtrace 5.14.4 loaded"
+}
+
+if [ module-info mode remove ] {
+ system echo "vampirtrace 5.14.4 unloaded"
+}
+

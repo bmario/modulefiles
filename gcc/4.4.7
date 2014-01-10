@@ -1,0 +1,38 @@
+#%Module1.0######################################################################
+
+proc ModulesHelp { } {
+        global version modroot
+        puts stdout "\t loads gcc 4.4.7 \n"
+}
+
+module-whatis   "loads gcc 4.4.7"
+
+# for Tcl script use only
+set     version         3.2.9
+set     modroot         /usr/local/Modules/default
+      
+# open mpi
+setenv          OMPI_CC         gcc
+setenv          OMPI_CFLAGS     ""
+setenv          OMPI_CXX        g++
+setenv          OMPI_CXXFLAGS   ""
+               
+setenv CC       gcc
+setenv CXX      g++ 
+
+conflict gcc
+
+prepend-path PATH /opt/gcc/4.4.7/bin
+    
+if [ module-info mode load ] {
+ system echo "gcc 4.4.7 loaded"
+}
+
+if [ module-info mode switch2 ] {
+ system echo "gcc 4.4.7 loaded"
+}
+
+if [ module-info mode remove ] {
+ system echo "gcc 4.4.7 unloaded"
+}
+

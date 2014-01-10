@@ -1,0 +1,39 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stdout "\t loads ni_plugin r2488 \n"
+}
+
+module-whatis   "loads ni_plugin r2488"
+
+module load 	libni
+
+# for Tcl script use only
+set     version         3.2.9
+set     modroot         /usr/local/Modules/default
+
+
+prepend-path    LD_LIBRARY_PATH         	/opt/ni_plugin/scorep/r2488/lib
+
+prepend-path	SCOREP_METRIC_PLUGINS		niplugin
+setenv		SCOREP_METRIC_NIPLUGIN		ni_12V/watts,ni_12V/watts@butterworth:1:1500
+setenv		SCOREP_METRIC_NIPLUGIN_HOST	localhost
+
+if [ module-info mode load ] {
+ system echo "ni_plugin r2488 loaded"
+}
+
+if [ module-info mode switch2 ] {
+ system echo "ni_plugin r2488 loaded"
+}
+
+if [ module-info mode remove ] {
+ system echo "ni_plugin r2488 unloaded"
+}
+

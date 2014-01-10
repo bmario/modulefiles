@@ -1,0 +1,38 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stdout "\t loads otf 1.12.4 \n"
+}
+
+module-whatis   "loads otf 1.12.4"
+
+# for Tcl script use only
+set     version         3.2.9
+set     modroot         /usr/local/Modules/default
+
+
+prepend-path    PATH                    /opt/otf/1.12.4/bin
+
+prepend-path    LD_LIBRARY_PATH         /opt/otf/1.12.4/lib
+prepend-path    INCLUDE                 /opt/otf/1.12.4/include 
+prepend-path    CPATH                   /opt/otf/1.12.4/include 
+prepend-path    LIBRARY_PATH            /opt/otf/1.12.4/lib
+
+if [ module-info mode load ] {
+ system echo "otf 1.12.4 loaded"
+}
+
+if [ module-info mode switch2 ] {
+ system echo "otf 1.12.4 loaded"
+}
+
+if [ module-info mode remove ] {
+ system echo "otf 1.12.4 unloaded"
+}
+

@@ -1,0 +1,33 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stdout "\t loads silc-tools 04 \n"
+}
+
+module-whatis   "loads silc-tools 04"
+
+prepend-path    PATH                    /opt/silc-tools/04/bin
+
+prepend-path    LD_LIBRARY_PATH         /opt/silc-tools/04/lib
+prepend-path    INCLUDE                 /opt/silc-tools/04/include 
+prepend-path    CPATH                   /opt/silc-tools/04/include 
+prepend-path    LIBRARY_PATH            /opt/silc-tools/04/lib
+
+if [ module-info mode load ] {
+ system echo "silc-tools 04 loaded"
+}
+
+if [ module-info mode switch2 ] {
+ system echo "silc-tools 04 loaded"
+}
+
+if [ module-info mode remove ] {
+ system echo "scorep 1.2 unloaded"
+}
+

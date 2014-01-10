@@ -1,0 +1,34 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stdout "\t loads intel 12.1.5 \n"
+}
+
+module-whatis   "loads intel 1.2.1"
+
+prepend-path    PATH                    /opt/intel/composer_xe_2011_sp1.11.339/bin/intel64
+
+prepend-path    LD_LIBRARY_PATH         /opt/intel/composer_xe_2011_sp1.11.339/debugger/lib/intel64
+#prepend-path    INCLUDE                 /opt/intel/12.1.5/include 
+#prepend-path    CPATH                   /opt/intel/12.1.5/include 
+prepend-path    LIBRARY_PATH            /opt/intel/composer_xe_2011_sp1.11.339/debugger/lib/intel64
+prepend-path    NLS_PATH                /opt/intel/composer_xe_2011_sp1.11.339/debugger/intel64/locale/%l_%t/%N
+
+if [ module-info mode load ] {
+ system echo "intel 12.1.5 loaded"
+}
+
+if [ module-info mode switch2 ] {
+ system echo "intel 12.1.5 loaded"
+}
+
+if [ module-info mode remove ] {
+ system echo "intel 12.1.5 unloaded"
+}
+
