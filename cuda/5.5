@@ -1,0 +1,37 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stdout "\t loads CUDA 5.5 \n"
+}
+
+module-whatis   "loads CUDA 5.5"
+
+# for Tcl script use only
+set     version         3.2.9
+set     modroot         /usr/local/Modules/default
+
+
+prepend-path    PATH                    /usr/local/cuda/bin
+prepend-path    LD_LIBRARY_PATH         /usr/local/cuda/lib
+prepend-path    INCLUDE                 /usr/local/cuda/include
+prepend-path    CPATH                   /usr/local/cuda/include
+prepend-path    LIBRARY_PATH            /usr/local/cuda/lib
+
+if [ module-info mode load ] {
+ system echo "CUDA 5.5 loaded"
+}
+
+if [ module-info mode switch2 ] {
+ system echo "CUDA 5.5 loaded"
+}
+
+if [ module-info mode remove ] {
+ system echo "CUDA 5.5 unloaded"
+}
+
