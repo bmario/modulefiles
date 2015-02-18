@@ -1,0 +1,42 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+
+
+# for Tcl script use only
+set     version         3.2.9
+set     modroot         /usr/local/Modules/default
+
+
+# set module name, version, prefix
+set     name            likwid
+set     version         3.1.3
+set     prefix          /opt
+
+module-whatis   "loads $name $version"
+
+# resulting paths 
+set     path            $prefix/$name/$version
+
+prepend-path    PATH                    $path/bin
+
+prepend-path    LD_LIBRARY_PATH         $path/lib
+prepend-path    INCLUDE                 $path/include 
+prepend-path    CPATH                   $path/include 
+prepend-path    LIBRARY_PATH            $path/lib
+
+if [ module-info mode load ] {
+ system echo "$name $version loaded"
+}
+
+if [ module-info mode switch2 ] {
+ system echo "$name $version loaded"
+}
+
+if [ module-info mode remove ] {
+ system echo "$name $version unloaded"
+}
+
